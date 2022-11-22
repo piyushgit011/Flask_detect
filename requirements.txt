@@ -1,5 +1,5 @@
 ﻿tensorflow-cpu
 flask
-cv2
+opencv-python
 numpy
 gunicorn
