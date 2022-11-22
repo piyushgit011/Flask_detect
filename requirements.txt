@@ -3,7 +3,6 @@ flask
 opencv-python
 numpy
 requests
-json 
 math
 mediapipe
 gunicorn
