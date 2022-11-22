@@ -2,4 +2,7 @@
 flask
 opencv-python
 numpy
+requests
+json 
+mediapipe
 gunicorn
