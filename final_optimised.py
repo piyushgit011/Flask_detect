@@ -74,7 +74,7 @@ emotion_output_details = emotion_interpreter.get_output_details()
 
 emotion_input_shape = emotion_input_details[0]['shape']
 
-class_labels = ['Angry','Disgust','Fear','Happy','Neutral', 'Sad', 'Surprise']
+class_labels = ['confused','confused','confused','Happy','Neutral', 'Sad', 'Surprise']
 app=Flask(__name__)
 
 
@@ -90,7 +90,7 @@ def gen_frames():
      height,width = frame.shape[:2]
     #  labels = []
      gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-    #  frame = cv2.flip(frame, 1)
+    #  frame = cv2.flip(frame, 1)9
      faces = face.detectMultiScale(gray)
 
      for (x,y,w,h) in faces:
@@ -143,13 +143,13 @@ def gen_frames():
         #  print(iris_pos)
          cv2.putText(frame,f"{iris_pos}",(30,30),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2, cv2.LINE_AA)
          
-     url ="http://192.168.1.7:5000/mlData"
-# jsonStr = json.dumps(arr, default = str)
-# print(jsonStr)   
-     headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
-# r = requests.post(url ="http://192.168.230.29:5000/mlData", data = payload)
-     requests.post(url,data=json.dumps(arr), headers=headers)   
-    #  requests.post(url,data=json.dumps(iris_pos), headers=headers)   
+#      url ="http://192.168.1.7:5000/mlData"
+# # jsonStr = json.dumps(arr, default = str)
+# # print(jsonStr)   
+#      headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
+# # r = requests.post(url ="http://192.168.230.29:5000/mlData", data = payload)
+#      requests.post(url,data=json.dumps(arr), headers=headers)   
+#     #  requests.post(url,data=json.dumps(iris_pos), headers=headers)   
      
      ret, buffer = cv2.imencode('.jpg', frame)
      frame = buffer.tobytes()
