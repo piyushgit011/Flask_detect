@@ -1,4 +1,4 @@
-﻿tensorflow
+﻿tensorflow-cpu
 flask
 cv2
 numpy
